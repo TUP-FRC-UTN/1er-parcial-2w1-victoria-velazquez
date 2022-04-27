@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+    integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+
+ <style>
+    label.is-invalid {
+        color: red;
+    }
+
+    input.is-invalid {
+        border: 1px solid red !important;
+    }
+
+    input.is-valid {
+        border: 1px solid green !important;
+    }
+</style>
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.js"></script>
+
+<!--<script src="/js/jquery.validate.translations.es.js"></script>-->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+    crossorigin="anonymous"></script>
+
+
+    <style>
+        .container{
+            margin-top: 50px;
+            margin-left: 10px;
+            margin-right: 10px;
+            padding: 20px;
+        }
+    </style>
+
+    <script>
+         $(document).ready(function () {
+            $("#save").click(function () {
+                if ($("#form-register").valid()) {
+                    alert("todo perfecto");
+                }
+                else {
+                    alert("motomami hay errores");
+                }
+            });
+
+            $("#form-register").validate({
+                rules: {
+                    inputName: {
+                        required: true,
+                        
+                        maxlength: 11
+                    },
+                    inputApellido: {
+                        required: true,
+                        
+                        
+                     },
+                                              
+                },
+             
+                errorClass: "is-invalid",
+                validClass: "is-valid",
+                debug: true
+            });
+        });
+
+    
+    </script>
+
+    
+  </head>
+
+  <body > 
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/home.html">Paginal principal</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Alumno <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index2.html">Alta de usuario</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index3.html">Galeria de imagenes</a>
+                </li>
+               
+                
+            </ul>
+        </div>
+    </nav>
+    <div class="container bg-light py-4">
+        <h1 class="display-3">Alta de usuario </h1>
+        <p class="lead">Ingrese sus datos (*￣3￣)╭</p>
+    </div>
+
+    <div class="container py-5 bg-light" >
+        <form id="form-register">
+            <div class="row">
+                <div class="form-group col-md-6">
+                    <label for="inputName">Nombre </label>
+                    <input type="text" class="form-control" name="inputName" id="inputName">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="inputApellido">Apellido</label>
+                    <input type="number" class="form-control" name="inputApellido" id="inputApellido">
+                </div>
+               
+            </div>
+            <div class="row">
+                <div class="form-group col-md-6">
+                    <label for="inputGramos">Deporte</label>
+                    <select name="deporte" id="cmbDeporte">
+                        <option value="">Seleccione...</option>
+                        <option value="tenis">Tenis</option>
+                        <option value="futbol">Futbol</option>
+                        <option value="squash">Padel</option>
+                        <option value="padel">Squash</option>
+                      </select>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="inputSexo">Sexo</label> <br>
+                    <label for="sexo">Masculino</label> 
+                      <input type="radio" name="sexo" value="masculino"> <br>
+                     <label for="sexo">Femenino</label> 
+                     <input type="radio" name="sexo" value="femenino"> <br>
+                     
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-6">
+                    <label for="inputCalle">Calle </label>
+                    <input type="text" class="form-control" name="inputCalle" id="inputCalle">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="inputNum">N°</label>
+                    <input type="number" class="form-control" name="inputNum" id="inputNum">
+                </div>
+               
+            </div>
+            <div class="row">
+                <div class="form-group col-md-6">
+                    <label for="inputBarrio">Barrio </label>
+                    <input type="text" class="form-control" name="inputBarrio" id="inputBarrio">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="inputCP">Codigo Postal</label>
+                    <input type="number" class="form-control" name="inputCP" id="inputCP">
+                </div>
+               
+            </div>
+
+            <br><br>
+            <button type="submit" class="btn btn-primary" id="save" >Confirmar</button>
+            
+
+        </form>
+    </div>
+
+   
+
+    
+  </body>
+</html>
